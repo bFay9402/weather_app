@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #333;
+  color: #fff;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 15px 15px;
+}
+
+header input {
+  width: 100%;
+  max-width: 25%;
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 24px;
+  color: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  font-size: 15px;
+  font-weight: 300;
+  transition: 0.2s ease-out;
+}
+
+header input:hover {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+header input:focus {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+::placeholder {
+  color: #fff;
+}
+
+main {
+  display: flex;
+  flex: 1 1 100%;
+  flex-direction: column;
+  padding: 25px 25px 50px;
+  align-items: center;
+  text-align: center;
+}
+
+.location .city {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 5%;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.location .date {
+  font-size: 1.2rem;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.current .temp {
+  font-size: 5rem;
+  margin: 30px 0;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.current .temp span {
+  font-size: 3rem;
+}
+
+.current .weather {
+  font-size: 1.2rem;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.current .hi-low {
+  font-size: 1.2rem;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
