@@ -10,6 +10,7 @@ searchBar.addEventListener('keypress', setQuery);
 function setQuery(evt) {
   if (evt.keyCode === 13) {
     getResults(searchBar.value);
+    searchBar.value = '';
   }
 }
 
@@ -27,20 +28,23 @@ function displayResults(weather) {
 
   let today = new Date();
   let date = document.querySelector('.location .date');
-  date.innerText = dateBuilder(today);
+  date.innerText = createDate(today);
 
   let temp = document.querySelector('.current .temp');
   temp.innerHTML = `${Math.round(weather.main.temp)}<sup><span>°F</span></sup>`;
 
-  let weatherEl = document.querySelector('.current, .weather');
+  let feelsLike = document.querySelector('.current .feels-like');
+  feelsLike.innerHTML = `Feels like ${Math.round(weather.main.feels_like)}<sup><span>°F<span/><sup/>`
+
+  let weatherEl = document.querySelector('.current .weather');
   weatherEl.innerText = weather.weather[0].main;
 
   let highLow = document.querySelector('.high-low');
-  highLow.innerHTML = `High: ${weather.main.temp_min}<sup>°F</sup> / Low: ${weather.main.temp_max}<sup>°F</sup>`;
+  highLow.innerHTML = `High: ${Math.round(weather.main.temp_max)}<sup>°F</sup> / Low: ${Math.round(weather.main.temp_min)}<sup>°F</sup>`;
 }
 
 //makes date takes in d for date
-function dateBuilder(d) {
+function createDate(d) {
   const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
